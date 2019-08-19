@@ -8,7 +8,7 @@
 
 ## get you own OMDB Key
 
-(http://www.omdbapi.com/)[http://www.omdbapi.com/]
+[http://www.omdbapi.com/](http://www.omdbapi.com/)
 
 ## Start Project
 
