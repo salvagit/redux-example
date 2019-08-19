@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   isLoading: false,
-  movies: {}
+  items: []
 };
 
 export default function(state = initialState, action) {
@@ -14,7 +14,7 @@ export default function(state = initialState, action) {
     case GET_MOVIES_START:
       return { ...state, isLoading: true };
     case GET_MOVIES_SUCCESS:
-      return { ...state, movies: action.data, isLoading: false };
+      return { ...state, items: action.data, isLoading: false };
     case GET_MOVIES_ERROR:
       return { ...state, isLoading: true };
 

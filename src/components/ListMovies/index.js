@@ -9,13 +9,24 @@ class ListMovies extends PureComponent {
   }
 
   render() {
-    const { movies } = this.props;
-    console.log(movies);
-    return <p>no movies</p>;
+    const { movies, isLoadign } = this.props;
+    return (
+      <div>
+        {isLoadign && <p>loadign ..</p>}
+        {!isLoadign &&
+          movies.length &&
+          movies.map((el, index) => {
+            return <p key={index}>{el.Title}</p>;
+          })}
+      </div>
+    );
   }
 }
 
-const mapStateToProps = ({ movies }) => ({ movies });
+const mapStateToProps = state => ({
+  isLoadign: state.movies.isLoadign,
+  movies: state.movies.items
+});
 
 const mapDispatchToProps = dispatch => ({
   getMovies: () => dispatch(getMovies())
